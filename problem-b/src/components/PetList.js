@@ -2,10 +2,10 @@ import React from 'react';
 
 function PetCard(props) {
   const handleClick = () => {
-    props.adoptCallback(props.pet.name);
+    props.adoptCallback(props.petData.name);
   };
 
-  const { name, img, sex, breed, adopted } = props.pet;
+  const { name, img, sex, breed, adopted } = props.petData;
 
   return (
     <div className="card" onClick={handleClick}>
@@ -22,14 +22,17 @@ function PetCard(props) {
   );
 }
 
-export function PetList(props){
+export default function PetList(props) {
     const petCardArray = props.pets.map((pet) => {
         return <PetCard petData={pet} adoptCallback={props.adoptCallback} key={pet.name}/>
     })
     return(
+      <>
+        <h2>Dogs for Adoption</h2>
         <div className='card-deck'>
             {petCardArray}
         </div>
+      </>
     )
 }
 

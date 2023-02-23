@@ -29,7 +29,7 @@ function BreedNav(props) {
   return (
     <nav id="breedLinks">
     <h2>Pick a Breed</h2>
-    <ul class="list-unstyled">
+    <ul className="list-unstyled">
       {props.breeds.map((breed) => (
           <li key={breed}><a href={`#/${breed}`}>{breed}</a></li>
       ))}

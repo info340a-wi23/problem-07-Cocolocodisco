@@ -8,15 +8,13 @@ function App(props) {
   const [pets, setPets] = useState(props.pets);
 
   const adopt = (petName) => {
-    setPets((prevPets) => { // use setPets to update state
-      return prevPets.map((pet) => {
-        if (pet.name === petName) {
-          return { ...pet, adopted: !pet.adopted }; // use spread syntax to create a new object with updated adopted property
-        } else {
-          return pet;
-        }
-      });
-    });
+    setPets(pets.map((pet) => {
+      if (pet.name === petName) {
+        return { ...pet, adopted: true };
+      } else {
+        return pet;
+      }
+    }));
   };
 
   function breedArray(array) {

@@ -41,7 +41,7 @@ function App(props) {
     
       <main>
         <TeamSelectForm teamOptions={uniqueTeamNames} applyFilterCallback={applyFilter} />
-        <GameDataTable data={props.gameData} />
+        <GameDataTable data={displayedData} />
       </main>
 
       <footer>
